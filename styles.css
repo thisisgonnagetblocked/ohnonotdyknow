@@ -43,6 +43,16 @@ header h1 {
     color: #ff9800;
 }
 
+header a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+header a:hover {
+    color: #ff9800;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -64,22 +74,6 @@ section {
     padding: 2rem;
     text-align: center;
     margin-top: 2rem;
-}
-
-#game-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.game-card {
-    background-color: #292929;
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1rem;
-    width: 200px;
-    text-align: center;
-    font-family: 'Consolas', 'Courier New', monospace;
 }
 
 /* Footer Styling */
