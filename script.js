@@ -1,4 +1,6 @@
 const games = [
+    { title: "The Legend of Zelda", genre: "Adventure" },
+    { title: "God of War", genre: "Action" },
     { title: "Minecraft", genre: "Sandbox" },
     { title: "Fortnite", genre: "Battle Royale" },
 ];
