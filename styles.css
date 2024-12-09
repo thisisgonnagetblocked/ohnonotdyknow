@@ -1,6 +1,6 @@
 /* General Page Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Consolas', 'Courier New', monospace;
     margin: 0;
     padding: 0;
     background-color: #121212;
@@ -56,6 +56,7 @@ nav ul li {
 nav a {
     text-decoration: none;
     color: #ffffff;
+    font-family: 'Consolas', 'Courier New', monospace;
 }
 
 /* Section Styling */
@@ -78,6 +79,7 @@ section {
     margin: 1rem;
     width: 200px;
     text-align: center;
+    font-family: 'Consolas', 'Courier New', monospace;
 }
 
 /* Footer Styling */
@@ -88,4 +90,5 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-family: 'Consolas', 'Courier New', monospace;
 }
