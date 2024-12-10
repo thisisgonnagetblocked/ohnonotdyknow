@@ -1,3 +1,87 @@
+/* General Page Styles */
+body {
+    font-family: 'Consolas', 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* DNA Background Animation */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/5wT7Djj.png');
+    opacity: 0.2;
+    z-index: -1;
+    animation: swirl 20s linear infinite;
+}
+
+@keyframes swirl {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.2);
+    }
+}
+
+/* Header Styling */
+header {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #ff9800;
+    font-size: 2rem;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+header a:hover {
+    color: #ff9800;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff9800;
+}
+
+/* Section Styling */
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
 /* Styling for the Games Section */
 #games {
     padding: 2rem;
@@ -18,7 +102,6 @@
 .game-card {
     background-color: #1e1e1e;
     color: #ffffff;
-    font-family: 'Consolas', 'Courier New', monospace;
     width: 250px;
     border-radius: 10px;
     overflow: hidden;
@@ -52,4 +135,36 @@
 .game-card p {
     font-size: 1rem;
     padding: 0 1rem 1rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
