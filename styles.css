@@ -50,10 +50,6 @@ header a {
     cursor: pointer;
 }
 
-header a:hover {
-    color: #ff9800;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -63,13 +59,6 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 1rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    transition: color 0.3s;
 }
 
 nav a:hover {
@@ -82,23 +71,16 @@ section {
     text-align: center;
 }
 
-/* Styling for the Games Section */
-#games {
-    padding: 2rem;
-    text-align: center;
-}
-
-/* Container for the game cards */
+/* Game Cards */
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between cards */
+    gap: 20px;
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
 }
 
-/* Game card styling */
 .game-card {
     background-color: #1e1e1e;
     color: #ffffff;
@@ -111,27 +93,23 @@ section {
     cursor: pointer;
 }
 
-/* Card hover effect */
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-/* Game card image styling */
 .game-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
 }
 
-/* Game card title styling */
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
 .game-card h3 {
     margin: 0.5rem 0;
     font-size: 1.5rem;
     color: #ff9800;
 }
 
-/* Game card description styling */
 .game-card p {
     font-size: 1rem;
     padding: 0 1rem 1rem;
@@ -146,25 +124,4 @@ footer {
     bottom: 0;
     width: 100%;
     font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 0.5rem 0;
-    }
-
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .game-card {
-        width: 90%;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
 }
