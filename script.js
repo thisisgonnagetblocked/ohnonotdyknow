@@ -26,7 +26,7 @@ const games = [
     { 
         title: "Cyberpunk 2077", 
         description: "Explore a futuristic open-world RPG.",
-        imageUrl: "https://via.placeholder.com/250x150"
+        imageUrl: "https://github.com/439iurbkjeq/32e7wy8uiqbjkrwf-hopy9t473g/blob/main/images/circuit.jpg?raw=true"
     },
     { 
         title: "Mario Kart", 
