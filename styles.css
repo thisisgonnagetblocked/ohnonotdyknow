@@ -1,12 +1,12 @@
 /* General Page Styles */
-body {
-    font-family: 'Consolas', 'Courier New', monospace;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
     background-color: #121212;
     color: #ffffff;
-    position: relative;
-    overflow-x: hidden;
 }
 
 /* DNA Background Animation */
@@ -34,23 +34,16 @@ body {
 /* Header Styling */
 header {
     background-color: #1e1e1e;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
-    position: fixed;
 }
 
-header h1 {
-    margin: 0;
+header h1 a {
     color: #ff9800;
-    font-size: 2rem;
-}
-
-header a {
     text-decoration: none;
-    color: inherit;
-    cursor: pointer;
 }
 
+/* Navigation Styling */
 nav ul {
     list-style: none;
     padding: 0;
@@ -62,12 +55,18 @@ nav ul li {
     margin: 0 1rem;
 }
 
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 nav a:hover {
     color: #ff9800;
 }
 
-/* Section Styling */
-section {
+/* Main Content */
+main {
+    flex: 1; /* Makes the main content take up remaining space */
     padding: 2rem;
     text-align: center;
 }
@@ -121,8 +120,6 @@ footer {
     background-color: #1e1e1e;
     padding: 0.5rem;
     text-align: center;
-    bottom: 0;
-    width: 100%;
     font-size: 0.8rem;
     margin-top: 2rem;
 }
