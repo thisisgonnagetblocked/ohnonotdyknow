@@ -64,6 +64,25 @@ nav a:hover {
     color: #ff9800;
 }
 
+/*Logo Styling*/
+.logo {
+    height: 75px; /* Adjust the size as needed */
+    vertical-align: middle; /* Align it with the text */
+    margin-right: 10px; /* Add spacing between the logo and text */
+}
+
+/*Welcome Message*/
+.welcome-container {
+    display: flex; /* Arrange items side by side */
+    align-items: center; /* Vertically align items */
+    justify-content: flex-start; /* Ensure items stay left-aligned */
+}
+
+/*Visitor Counter*/
+.visitor-counter {
+    margin-right: 20px; /* Add space between counter and the welcome message */
+}
+
 /* Main Content */
 main {
     flex: 1; /* Makes the main content take up remaining space */
@@ -114,6 +133,138 @@ main {
     font-size: 1rem;
     padding: 0 1rem 1rem;
 }
+
+/*Proxy Cards*/
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proxy-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.proxy-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.proxy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.proxy-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    color: #ff9800;
+}
+
+.proxy-card p {
+    font-size: 1rem;
+    padding: 0 1rem 1rem;
+}
+
+/*Search Bar Styling*/
+#search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#gameSearch {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*In case of no results*/
+#no-results {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin: 20px 0;
+    display: none;
+}
+
+/*Back Arrow Styling*/
+.back-arrow {
+    display: inline-block;
+    margin: 20px; /* Add space around the button */
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    border: 2px solid #444;
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+}
+
+.back-arrow:hover {
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Fullscreen iframe container */
+#game-container {
+    position: fixed; /* Fixed to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: #000; /* Optional: black background behind the iframe */
+    z-index: 1000; /* Ensure it appears above everything */
+}
+
+/* Fullscreen iframe */
+#game-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Back arrow styling */
+.back-arrow {
+    position: absolute; /* Position inside the game container */
+    top: 22px;
+    left: 1px;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    border: 2px solid #444;
+    z-index: 1100; /* Ensure it appears above the iframe */
+    transition: background-color 0.3s;
+}
+
+.back-arrow:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
 
 /* Footer Styling */
 footer {
