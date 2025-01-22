@@ -9,13 +9,15 @@
     <title>GameZone</title>
 </head>
 <body>
-    <div class="background"></div> <!-- DNA Pattern Background -->
+    <!-- DNA Pattern Background -->
+    <div class="background"></div>
 
+    <!-- Particle Animation Background -->
+    <div id="particles"></div>
     <header>
         <h1>
             <a href="index.html">
-                <img src="images/logo.png" alt="GameZone Logo" class="logo">
-                GameZone
+                GameZone v1.5
             </a>
         </h1>
         <nav>
@@ -32,20 +34,22 @@
 
     <main>
         <section id="home">
-    	    <div class="welcome-container">
-        	<!-- Visitor Counter -->
-        	<div class="visitor-counter">
-            	<a href='https://www.versicherungen.at/pflegevorsorge/'>private Pflegevorsorge</a>
-            	<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=8869e5cfa365aa7d6fc39a6a0009a0ebf6217dd9'></script>
-            	<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1287816/t/6"></script>
-            </div>
-        
         <!-- Welcome Message -->
         <div class="welcome-message">
-            <h2>:---------------------------[  Welcome to GameZone  ]---------------------------:</h2>
+            <h2>]-----------------------------[Welcome to GameZone]-----------------------------[</h2>
         </div>
-    </div>
-            
+
+	    <div class="welcome-container">
+	        <!-- Visitor Counter -->
+        	<div class="visitor-counter">
+		    <script type="text/javascript" src="https://www.stat-counter.org/count/h2lb"></script><br>
+ 		    <a href='http://www.freevisitorcounters.com'>stop looking here</a>
+		    <script type='text/javascript' src='https://whomania.com/ctr?id=6d6df842f9b48c331b963d42075515a82361d6ed'></script>
+    		</div>
+	    </div>
+	</section>
+
+	<section id="home">
             <h3>Recent Updates</h3>
             <ul>
                 <li><strong>12/21/2024 7:55 AM:</strong> Just added a Settings tab to make your gaming better!</li>
@@ -55,15 +59,45 @@
                 <li><strong>12/31/2024 4:49 PM:</strong> Games added, but not sure if it will work.</li>
                 <li><strong>1/1/2025 12:01 AM:</strong> Happy new year guys! (Yes, I actually wrote this at 12:01 AM)</li>
                 <li><strong>1/3/2025 12:50 PM:</strong> Finally added this to GitHub. Gams also started working!</li>
-		<li><strong>1.18.2025 11:43 AM</strong> I'm baaack! Added proxies, a search bar, and got Mally Sus (Finally) I plan to add Cocanium soon.</li>
+		<li><strong>1.18.2025 11:43 AM:</strong> I'm baaack! Added proxies, a search bar, and got Mally Sus (Finally) I plan to add Cocanium soon.</li>
             </ul>
+
+            
+        <section id="games">
+            <h2 class="section-label">Forms</h2>
+            <div class="card-container">
+                <a href="#" class="form-card" onclick="loadGame('https://forms.office.com/r/wZetKvdNt6')">
+                    <img src="images/forms.png" alt="Forms">
+                    <h3>GameZone Form</h3>
+		    <p>Add your game links or tell us how you're feeling about this website here!</p>
+                </a>
+	</section>
+
+	<section id="home">
+	    <h3>Bugs</h3>
+	    <p>I hate to have this section, but I do have some bugs.
+	    <ul>
+		<li>Crazygames, Poki, and Diddygames don't work, idk why.</li>
+		<li>As mentioned in the Proxies page, Rammerhead decided that the background should be black. (also idk why)
+		<p>It still works, though, so nothing to fear!</p>
+	    </ul>
         </section>
+
+        <!-- Fullscreen Iframe Container -->
+        <div id="game-container" style="display: none;">
+            <a href="index.html" class="back-arrow">← Back</a>
+            <iframe id="game-frame" src="" frameborder="0"></iframe>
+        </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2024 GameZone. All rights reserved.</p>
+        <p>&copy; 2025 GameZone. All rights reserved.</p>
     </footer>
+
+    <!-- Particle Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="rsgbg.js"></script>
 
 </body>
 </html>
