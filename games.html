@@ -12,7 +12,7 @@
     <div class="background"></div> <!-- DNA Pattern Background -->
 
     <header>
-        <h1><a href="index.html">GameZone</a></h1>
+        <h1><a href="index.html">GameZone v1.5</a></h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -28,44 +28,53 @@
     <main>
         <!-- Search Bar -->
         <section id="search-bar">
-            <input type="text" id="gameSearch" placeholder="Search for a game... (expect duplicates, sorry)" onkeyup="searchGames()">
+            <input type="text" id="gameSearch" placeholder="Search for a game..." onkeyup="searchGames()">
         </section>
 
-        <section id="games">
-            <h2 class="section-label">Popular</h2>
-            <div class="card-container">
-		<a href="#" class="game-card" onclick="loadGame('https://mathworksheetmaker.github.io/Division/Home.html')">
-		    <img src="images/msg.png" alt="Mally Sus Gaming">
-		    <h3>Mally Sus Gaming</h3>
-		</a>
-                <a href="#" class="game-card" onclick="loadGame('games/geometrydash.html')">
-                    <img src="images/geometrydash.jpg" alt="Geometry Dash">
-                    <h3>Geometry Dash</h3>
-                </a>
-                <a href="#" class="game-card" onclick="loadGame('games/itsrainingboxes.html')">
-                    <img src="images/itsrainingboxes.jpg" alt="It's Raining Boxes">
-                    <h3>It's Raining Boxes</h3>
-                </a>
-                <a href="#" class="game-card" onclick="loadGame('games/slope.html')">
-                    <img src="images/slope.jpg" alt="Slope">
-                    <h3>Slope 3D</h3>
-                </a>
-            </div>
 
-            <h2 class="section-label">All Games</h2>
+        <section id="games">
+            <h2 class="section-label">Appels</h2>
+	    <p class="section-label">I have so many of these, I had to make a new section for them!</p>
+            <div class="card-container">
+                <a href="#" class="game-card" onclick="loadGame('games/appel.html')">
+                    <img src="images/appel.jpg" alt="Appel">
+                    <h3>Appel</h3>
+                </a>
+                <a href="#" class="game-card" onclick="loadGame('games/appelmulti.html')">
+                    <img src="images/appelmulti.png" alt="Appel Multiplayer">
+                    <h3>Appel Multiplayer</h3>
+                </a>
+                <a href="#" class="game-card" onclick="loadGame('games/greatappel.html')">
+                    <img src="images/appel.jpg" alt="Great Appel">
+                    <h3>Great Appel</h3>
+                </a>
+                <a href="#" class="game-card" onclick="loadGame('games/absurdappel.html')">
+                    <img src="images/appel.jpg" alt="Appel">
+                    <h3>Absurd Appel</h3>
+                </a>
+                <a href="#" class="game-card" onclick="loadGame('games/appelultima.html')">
+                    <img src="images/appel.jpg" alt="Appel Ultima">
+                    <h3>Appel Ultima Underworld</h3>
+                </a>
+	    </div>
+
+            <h2 class="section-label">Games</h2>
             <div class="card-container">
                 <a href="#" class="game-card" onclick="loadGame('games/2048.html')">
                     <img src="images/2048.jpg" alt="2048">
                     <h3>2048</h3>
                 </a>
+
                 <a href="#" class="game-card" onclick="loadGame('games/agariolite.html')">
                     <img src="images/agariolite.jpg" alt="Agario Lite">
                     <h3>Agar.io Lite</h3>
                 </a>
-                <a href="#" class="game-card" onclick="loadGame('games/appel.html')">
-                    <img src="images/appel.jpg" alt="Appel">
-                    <h3>Appel</h3>
-                </a>
+
+    		<a href="#" class="game-card" onclick="loadGame('https://bloxd.io/')">
+        	    <img src="images/bloxdio.png" alt="Bloxd.io">
+        	    <h3>Bloxd.io</h3>
+    		</a>
+
     		<a href="#" class="game-card" onclick="loadGame('games/EaglercraftXv1.8.8.html')">
 	            <img src="images/eaglercraft.jpg" alt="Eaglercraft">
     		    <h3>Eaglercraft v1.8.8</h3>
@@ -117,31 +126,35 @@
                 </a>
             </div>
 
-	    <h2 class="section-label">The Sus Gamers</h2>
+            <h2 class="section-label">Gaming Platforms</h2>
             <div class="card-container">
-                <a href="#" class="game-card" onclick="loadGame('p/RSG.html')">
-                    <img src="images/rsg.png" alt="Ryan Sus Gaming">
-                    <h3>Ryan Sus Gaming</h3>
+                <a href="#" class="game-card" onclick="loadGame('https://op1um.pages.dev/')">
+                    <img src="images/op1um.png" alt="Cocainium">
+                    <h3>Cocainium</h3>
                 </a>
-		<a href="#" class="game-card" onclick="loadGame('https://mathworksheetmaker.github.io/Division/Home.html')">
-		    <img src="images/msg.png" alt="Mally Sus Gaming">
-		    <h3>Mally Sus Gaming</h3>
-		</a>
-            </div>
-            
-            <h2 class="section-label">All Gaming Platforms</h2>
-            <div class="card-container">
-                <a href="#" class="game-card" onclick="loadGame('p/RSG.html')">
-                    <img src="images/rsg.png" alt="Ryan Sus Gaming">
-                    <h3>Ryan Sus Gaming</h3>
+                <a href="#" class="game-card" onclick="loadGame('https://crazygames.com')">
+                    <img src="images/crazygames.png" alt="Crazygames">
+                    <h3>Crazygames</h3>
                 </a>
-		<a href="#" class="game-card" onclick="loadGame('https://mathworksheetmaker.github.io/Division/Home.html')">
-		    <img src="images/msg.png" alt="Mally Sus Gaming">
-		    <h3>Mally Sus Gaming</h3>
-		</a>
+                <a href="#" class="game-card" onclick="loadGame('https://diddygames.github.io/')">
+                    <img src="images/diddy.png" alt="DiddyGames">
+                    <h3>DiddyGames</h3>
+                </a>
                 <a href="#" class="game-card" onclick="loadGame('gams/Gams.html')">
                     <img src="images/gams.png" alt="Gams">
                     <h3>Gams</h3>
+                </a>
+                <a href="#" class="game-card" onclick="loadGame('https://mathworksheetmaker.github.io/Jaowedhawdhjfaghwhssdasdwasdgwadfggr12246y2/')">
+                    <img src="images/rsg.png" alt="Ryan Sus Gaming">
+                    <h3>Ryan Sus Gaming</h3>
+                </a>
+		<a href="#" class="game-card" onclick="loadGame('https://mathworksheetmaker.github.io/Division/Home.html')">
+		    <img src="images/msg.png" alt="Mally Sus Gaming">
+		    <h3>Mally Sus Gaming</h3>
+		</a>
+                <a href="#" class="game-card" onclick="loadGame('https://poki.com/')">
+                    <img src="images/poki.png" alt="Poki">
+                    <h3>Poki</h3>
                 </a>
             </div>
 
@@ -157,9 +170,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 GameZone. All rights reserved.</p>
+        <p>&copy; 2025 GameZone. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
