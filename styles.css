@@ -9,25 +9,14 @@ html, body {
     color: #ffffff;
 }
 
-/* DNA Pattern Background */
+/* Background */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2; /* Ensure it's in the very back */
-}
-
-/* Particle Animation Background */
-#particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Above DNA but below the content */
-    pointer-events: none; /* Prevent interference with user interaction */
+    z-index: -2; /* To ensure it's in the very back */
 }
 
 /* Header Styling */
@@ -83,7 +72,7 @@ nav a:hover {
 }
 
 .visitor-counter {
-    margin-top: -35px; /* Add some spacing */
+    margin-top: -70px; /* Add some spacing */
     text-align: center; /* Center it if needed */
 }
 
@@ -241,31 +230,6 @@ main {
     display: none;
 }
 
-/*Back Arrow Styling*/
-.back-arrow {
-    display: inline-block;
-    margin: 20px; /* Add space around the button */
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    background-color: #333;
-    border-radius: 5px;
-    border: 2px solid #444;
-    transition: background-color 0.3s, color 0.3s;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-}
-
-}
-
-.back-arrow:hover {
-    background-color: #555;
-    color: #fff;
-    cursor: pointer;
-}
-
 /* Fullscreen iframe container */
 #game-container {
     position: fixed; /* Fixed to the viewport */
@@ -282,27 +246,6 @@ main {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-/* Back arrow styling */
-.back-arrow {
-    position: absolute; /* Position inside the game container */
-    top: 22px;
-    left: 1px;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    background-color: #333;
-    border-radius: 5px;
-    border: 2px solid #444;
-    z-index: 1100; /* Ensure it appears above the iframe */
-    transition: background-color 0.3s;
-}
-
-.back-arrow:hover {
-    background-color: #555;
-    cursor: pointer;
 }
 
 /* Footer Styling */
