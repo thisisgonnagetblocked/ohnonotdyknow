@@ -2,21 +2,22 @@
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
     font-family: 'Consolas', 'Courier New', monospace;
-    display: flex;
-    flex-direction: column;
-    background-color: #121212;
     color: #ffffff;
+    overflow-x: hidden; /* Prevents horizontal scroll issues */
 }
 
-/* Background */
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2; /* To ensure it's in the very back */
+/* Background Fix */
+body {
+    background: url('background.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Fix scrolling issues */
+main {
+    min-height: 100vh; /* Ensures the page fills the viewport */
+    padding: 20px; /* Adds space at the top */
 }
 
 /* Header Styling */
@@ -72,7 +73,7 @@ nav a:hover {
 }
 
 .visitor-counter {
-    margin-top: -50px; /* Add some spacing */
+    margin-top: -70px; /* Add some spacing */
     text-align: center; /* Center it if needed */
 }
 
@@ -168,7 +169,6 @@ main {
     padding: 0 1rem 1rem;
 }
 
-/*Form Cards*/
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -208,7 +208,7 @@ main {
     text-decoration: none;
 }
 
-/*Link Cards*/
+/*Link Card*/
 .card-container {
     display: flex;
     flex-wrap: wrap;
