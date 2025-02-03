@@ -92,3 +92,49 @@ function searchGames() {
         if (noResultsMessage) noResultsMessage.style.display = "none";
     }
 }
+
+// Disable Right Click
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+// Disable DevTools Shortcuts
+document.addEventListener("keydown", (event) => {
+    if (
+        event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) || 
+        (event.ctrlKey && event.key === "U")
+    ) {
+        event.preventDefault();
+    }
+});
+
+// Auto-Detect DevTools & Close Tab or Redirect
+let devtoolsOpen = false;
+
+const checkDevTools = () => {
+    const threshold = 160; // DevTools detection size
+    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+
+    if (widthThreshold || heightThreshold) {
+        devtoolsOpen = true;
+
+        // Try to Close the Tab Automatically
+        window.open('', '_self').close(); // Attempt to close tab
+
+        // If close fails, redirect instantly
+        window.location.replace("https://www.google.com"); // Redirect to another page
+    } else {
+        devtoolsOpen = false;
+    }
+};
+
+// Continuously check for DevTools every 1 second
+setInterval(checkDevTools, 1000);
+
+// Disable Console (Prevents Inspecting Code)
+setInterval(() => {
+    console.clear();
+    console.log = function () {};
+    console.warn = function () {};
+    console.error = function () {};
+}, 100);
