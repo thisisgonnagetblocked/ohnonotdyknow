@@ -1,51 +1,83 @@
-console.log("Welcome to GameZone!");
+console.log("you shouldn't be seeing this");
 
 function loadGame(gameUrl) {
     const gameContainer = document.getElementById("game-container");
     const gameFrame = document.getElementById("game-frame");
 
-    // Set the iframe source to the selected game's URL
     gameFrame.src = gameUrl;
-
-    // Show the iframe container
     gameContainer.style.display = "block";
 
-    // Scroll to the top of the iframe container
     window.scrollTo({
         top: gameContainer.offsetTop,
         behavior: "smooth"
     });
 }
 
-// Optional: Add hover effects for the back arrow dynamically
-document.addEventListener("DOMContentLoaded", () => {
-    const backArrow = document.querySelector(".back-arrow");
-    if (backArrow) {
-        backArrow.addEventListener("mouseover", () => {
-            backArrow.style.backgroundColor = "#555";
-        });
+let loadingTimeout; // Store timeout to cancel if page loads fast
 
-        backArrow.addEventListener("mouseout", () => {
-            backArrow.style.backgroundColor = "#333";
-        });
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOMContentLoaded event fired");
+
+    // Set a timeout: If loading takes longer than 3 seconds, show loading screen
+    loadingTimeout = setTimeout(() => {
+        console.log("Loading screen shown (page taking longer than 3s)");
+        createLoadingScreen();
+    }, 3000); // 3-second delay before showing loading screen
+
+    window.onload = () => {
+        clearTimeout(loadingTimeout); // Cancel loading screen if page loads fast
+        removeLoadingScreen(); // Hide loading screen if already shown
+    };
 });
 
-// Function to search games
-function searchGames() {
-    const input = document.getElementById("gameSearch").value.toLowerCase();
-    const gameCards = document.querySelectorAll(".game-card");
+// 🛠 **Function to Create Loading Screen (Only if Needed)**
+function createLoadingScreen() {
+    if (document.getElementById("loading-screen")) return; // Prevent multiple screens
 
-    gameCards.forEach(card => {
-        const title = card.querySelector("h3").textContent.toLowerCase();
-        if (title.includes(input)) {
-            card.style.display = "block"; // Show matching cards
+    const loadingScreen = document.createElement("div");
+    loadingScreen.id = "loading-screen";
+    loadingScreen.innerHTML = `
+        <div class="loader"></div>
+        <p>Loading GameZone...</p>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    `;
+    document.body.prepend(loadingScreen);
+
+    // Prevent scrolling while loading
+    document.body.style.overflow = "hidden";
+
+    // Start Progress Bar Animation
+    let progress = 0;
+    const progressBar = document.querySelector(".progress-bar");
+
+    const interval = setInterval(() => {
+        if (progress >= 100) {
+            clearInterval(interval);
+            removeLoadingScreen();
         } else {
-            card.style.display = "none"; // Hide non-matching cards
+            progress += Math.random() * 15;
+            progressBar.style.width = `${Math.min(progress, 100)}%`;
         }
-    });
+    }, 500);
 }
 
+// 🛠 **Function to Remove Loading Screen**
+function removeLoadingScreen() {
+    console.log("Removing loading screen...");
+    const loadingScreen = document.getElementById("loading-screen");
+    if (loadingScreen) {
+        loadingScreen.style.opacity = "0";
+        setTimeout(() => {
+            loadingScreen.style.display = "none";
+            document.body.style.overflow = "auto";
+            document.body.classList.add("loaded");
+        }, 500);
+    }
+}
+
+// 🔍 Function to Search Games
 function searchGames() {
     const input = document.getElementById("gameSearch").value.toLowerCase();
     const gameCards = document.querySelectorAll(".game-card");
@@ -54,10 +86,7 @@ function searchGames() {
     let hasResults = false;
 
     if (input) {
-        // Hide all section labels
         sectionLabels.forEach(label => (label.style.display = "none"));
-
-        // Filter game cards
         gameCards.forEach(card => {
             const title = card.querySelector("h3").textContent.toLowerCase();
             if (title.includes(input)) {
@@ -68,7 +97,6 @@ function searchGames() {
             }
         });
 
-        // Show "no results" message if no matches
         if (!hasResults) {
             if (!noResultsMessage) {
                 const message = document.createElement("div");
@@ -82,16 +110,25 @@ function searchGames() {
             noResultsMessage.style.display = "none";
         }
     } else {
-        // Restore original layout
         sectionLabels.forEach(label => (label.style.display = "block"));
-
-        // Show all game cards
         gameCards.forEach(card => (card.style.display = "block"));
-
-        // Hide "no results" message
         if (noResultsMessage) noResultsMessage.style.display = "none";
     }
 }
+
+// 🎨 Optional: Add Hover Effects for the Back Arrow
+document.addEventListener("DOMContentLoaded", () => {
+    const backArrow = document.querySelector(".back-arrow");
+    if (backArrow) {
+        backArrow.addEventListener("mouseover", () => {
+            backArrow.style.backgroundColor = "#555";
+        });
+        backArrow.addEventListener("mouseout", () => {
+            backArrow.style.backgroundColor = "#333";
+        });
+    }
+});
+
 
 // Disable Right Click
 document.addEventListener("contextmenu", (event) => event.preventDefault());
