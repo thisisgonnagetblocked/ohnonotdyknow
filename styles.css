@@ -446,7 +446,7 @@ button:hover {
 .link-card {
     background-color: #1e1e1e;
     color: #ffffff;
-    width: 500px;
+    width: 200px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
