@@ -1,38 +1,46 @@
 console.log("you shouldn't be seeing this");
 
-function loadGame(gameUrl) {
-    const gameContainer = document.getElementById("game-container");
-    const gameFrame = document.getElementById("game-frame");
-
-    gameFrame.src = gameUrl;
-    gameContainer.style.display = "block";
-
-    window.scrollTo({
-        top: gameContainer.offsetTop,
-        behavior: "smooth"
-    });
-}
-
-let loadingTimeout; // Store timeout to cancel if page loads fast
-
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOMContentLoaded event fired");
 
-    // Set a timeout: If loading takes longer than 3 seconds, show loading screen
-    loadingTimeout = setTimeout(() => {
-        console.log("Loading screen shown (page taking longer than 3s)");
+    const gameContainer = document.getElementById("game-container");
+    const gameFrame = document.getElementById("game-frame");
+    const backArrow = document.getElementById("back-arrow");
+
+    // Hide back arrow initially
+    backArrow.style.display = "none";
+
+    // Load Game Function
+    window.loadGame = function(gameUrl) {
+        gameFrame.src = gameUrl;
+        gameContainer.style.display = "block";
+        backArrow.style.display = "block"; // Show back arrow
+        window.scrollTo({ top: gameContainer.offsetTop, behavior: "smooth" });
+    };
+
+    // Back Button Functionality
+    backArrow.addEventListener("click", (event) => {
+        event.preventDefault();
+        gameContainer.style.display = "none";
+        backArrow.style.display = "none"; // Hide back arrow when exiting
+        gameFrame.src = ""; // Clear iframe
+    });
+
+    // Loading Screen Logic
+    let loadingTimeout = setTimeout(() => {
+        console.log("Loading screen shown (page taking longer than 2s to load)");
         createLoadingScreen();
-    }, 3000); // 3-second delay before showing loading screen
+    }, 2000);
 
     window.onload = () => {
-        clearTimeout(loadingTimeout); // Cancel loading screen if page loads fast
-        removeLoadingScreen(); // Hide loading screen if already shown
+        clearTimeout(loadingTimeout);
+        removeLoadingScreen();
     };
 });
 
-// 🛠 **Function to Create Loading Screen (Only if Needed)**
+// Function to Create Loading Screen
 function createLoadingScreen() {
-    if (document.getElementById("loading-screen")) return; // Prevent multiple screens
+    if (document.getElementById("loading-screen")) return;
 
     const loadingScreen = document.createElement("div");
     loadingScreen.id = "loading-screen";
@@ -44,38 +52,37 @@ function createLoadingScreen() {
         </div>
     `;
     document.body.prepend(loadingScreen);
-
-    // Prevent scrolling while loading
     document.body.style.overflow = "hidden";
 
-    // Start Progress Bar Animation
     let progress = 0;
     const progressBar = document.querySelector(".progress-bar");
-
     const interval = setInterval(() => {
+        progress += Math.random() * 15;
+        progressBar.style.width = `${Math.min(progress, 100)}%`;
+
         if (progress >= 100) {
             clearInterval(interval);
             removeLoadingScreen();
-        } else {
-            progress += Math.random() * 15;
-            progressBar.style.width = `${Math.min(progress, 100)}%`;
         }
     }, 500);
 }
 
-// 🛠 **Function to Remove Loading Screen**
+// Function to Remove Loading Screen
 function removeLoadingScreen() {
-    console.log("Removing loading screen...");
     const loadingScreen = document.getElementById("loading-screen");
     if (loadingScreen) {
-        loadingScreen.style.opacity = "0";
-        setTimeout(() => {
-            loadingScreen.style.display = "none";
-            document.body.style.overflow = "auto";
-            document.body.classList.add("loaded");
-        }, 500);
+        loadingScreen.style.display = "none";
+        document.body.style.overflow = "auto";
     }
 }
+
+// Block all alerts, confirms, and prompts
+window.alert = function() {};
+window.confirm = function() { return false; };
+window.prompt = function() { return null; };
+
+// Console log to confirm the script is running
+console.log("Alert, confirm, and prompt functions have been disabled.");
 
 // 🔍 Function to Search Games
 function searchGames() {
@@ -128,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
 
 // Disable Right Click
 document.addEventListener("contextmenu", (event) => event.preventDefault());
