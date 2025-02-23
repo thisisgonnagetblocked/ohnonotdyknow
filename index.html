@@ -7,6 +7,39 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <script src="script.js"></script>
     <title>GameZone</title>
+
+    <style>
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff9800;
+            background-color: transparent;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            display: none; /* Hide by default */
+        }
+
+        .back-arrow:hover {
+            background-color: #f0f0f0;
+            color: #ff9800;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- DNA Pattern Background -->
@@ -52,7 +85,6 @@
 		<li>Idk wut to do</li>
 		<li>Changed and reset the visitor counter as the old one was kinda bad</li>
             </ul>
-
             
         <section id="games">
             <h2 class="section-label">Forms</h2>
@@ -69,51 +101,9 @@
             <a href="games.html" class="back-arrow">← Back</a>
             <iframe id="game-frame" src="" frameborder="0"></iframe>
         </div>
-
-    	<style>
-	        body {
-	            font-family: 'Consolas', 'Courier New', monospace;
-	            margin: 0;
-	            padding: 0;
-	        }
-	
-	        .back-arrow {
-	            position: absolute;
-	            top: 50px;
-	            left: 10px;
-	            text-decoration: none;
-	            font-size: 20px;
-	            font-weight: bold;
-	            color: #ff9800;
-	            background-color: transparent;
-	            padding: 5px 10px;
-	            border-radius: 4px;
-	            transition: background-color 0.3s ease;
-	        }
-	
-	        .back-arrow:hover {
-	            background-color: #f0f0f0;
-	            color: #ff9800;
-	        }
-	
-	        .content {
-	            padding: 20px;
-	            text-align: center;
-	        }
-	    </style>
-	</head>
-	<body>
-	   <a href="index.html" class="back-arrow">
-	        ← Back
-	   </a>
- 
-	</body>
-
     </main>
-
     <footer>
         <p>&copy; 2025 GameZone. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
