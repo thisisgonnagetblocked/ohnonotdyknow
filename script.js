@@ -81,8 +81,42 @@ window.alert = function() {};
 window.confirm = function() { return false; };
 window.prompt = function() { return null; };
 
-// Console log to confirm the script is running
-console.log("Alert, confirm, and prompt functions have been disabled.");
+// 🚨 Prevent Screenshot & Screen Recording
+document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+        document.body.innerHTML = "<h1>Screen capture detected. Access denied.</h1>";
+        setTimeout(() => {
+            window.location.replace("/blocked.html");
+        }, 2000);
+    }
+});
+
+// 🚫 Disable Copy, Cut, Paste, and Dragging
+document.addEventListener("copy", (event) => event.preventDefault());
+document.addEventListener("cut", (event) => event.preventDefault());
+document.addEventListener("paste", (event) => event.preventDefault());
+document.addEventListener("dragstart", (event) => event.preventDefault());
+
+// 🚨 Block VPN & Proxy Users
+fetch("https://api.ipregistry.co/?key=tryout")
+    .then(response => response.json())
+    .then(data => {
+        if (data.security.is_proxy || data.security.is_vpn) {
+            window.location.replace("/blocked.html");
+        }
+    })
+    .catch(err => console.error("VPN Detection Failed:", err));
+
+// 🚨 Block Incognito Mode Users
+(async function () {
+    const fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+    if (!fs) return;
+
+    fs(window.TEMPORARY, 100, () => {}, () => {
+        // If this runs, the user is in Incognito Mode
+        window.location.replace("/blocked.html");
+    });
+})();
 
 // 🔍 Function to Search Games
 function searchGames() {
