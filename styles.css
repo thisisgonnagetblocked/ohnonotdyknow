@@ -8,6 +8,19 @@ html, body {
     overflow-x: hidden; /* Prevents horizontal scroll issues */
 }
 
+/* Disable text selection & copying */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Disable dragging images */
+img {
+    pointer-events: none;
+}
+
 /* Full-Screen Loading Screen */
 #loading-screen {
     position: fixed;
