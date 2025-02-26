@@ -7,6 +7,40 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <script src="script.js"></script>
     <title>Proxies - GameZone</title>
+
+    <style>
+        body {
+            font-family: Consolas, 'Courier New', monospace;
+            margin: 0;
+            padding: 0
+        }
+    
+        .back-arrow {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            color: #ff9800;
+            background-color: transparent;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color .3s ease;
+            display: none;
+            cursor: pointer
+        }
+    
+        .back-arrow:hover {
+            background-color: #f0f0f0;
+            color: #ff9800
+        }
+    
+        .content {
+            padding: 20px;
+            text-align: center
+        }
+    </style>
 </head>
 <body>
     <div class="background"></div>
@@ -50,44 +84,6 @@
             <a href="games.html" class="back-arrow">← Back</a>
             <iframe id="game-frame" src="" frameborder="0"></iframe>
         </div>
-
-            <style>
-                body {
-                    font-family: 'Consolas', 'Courier New', monospace;
-                    margin: 0;
-                    padding: 0;
-                }
-         
-                .back-arrow {
-                    position: absolute;
-                    top: 50px;
-                    left: 10px;
-                    text-decoration: none;
-                    font-size: 20px;
-                    font-weight: bold;
-                    color: #ff9800;
-                    background-color: transparent;
-                    padding: 5px 10px;
-                    border-radius: 4px;
-                    transition: background-color 0.3s ease;
-                }
-         
-                .back-arrow:hover {
-                    background-color: #f0f0f0;
-                    color: #ff9800;
-                }
-        
-                .content {
-                    padding: 20px;
-                    text-align: center;
-                }
-            </style>    
-        </head>
-        <body>
-           <a href="proxies.html" class="back-arrow">
-                ← Back
-           </a>
-        </body>
 
     </main>
 
