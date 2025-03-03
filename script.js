@@ -1,6 +1,6 @@
 console.log("you shouldn't be seeing this");document.addEventListener("DOMContentLoaded",()=>{console.log("DOMContentLoaded event fired");const gameContainer=document.getElementById("game-container");const gameFrame=document.getElementById("game-frame");const backArrow=document.getElementById("back-arrow");backArrow.style.display="none";window.loadGame=function(gameUrl){gameFrame.src=gameUrl;gameContainer.style.display="block";backArrow.style.display="block";window.scrollTo({top:gameContainer.offsetTop,behavior:"smooth"})};backArrow.addEventListener("click",(event)=>{event.preventDefault();gameContainer.style.display="none";backArrow.style.display="none";gameFrame.src=""});let loadingTimeout=setTimeout(()=>{console.log("Loading screen shown (page taking longer than 2s to load)");createLoadingScreen()},2000);window.onload=()=>{clearTimeout(loadingTimeout);removeLoadingScreen()}});function createLoadingScreen(){if(document.getElementById("loading-screen"))return;const loadingScreen=document.createElement("div");loadingScreen.id="loading-screen";loadingScreen.innerHTML=`
         <div class="loader"></div>
-        <p>Loading GameZone...</p>
+        <p>Loading...</p>
         <div class="progress-bar-container">
             <div class="progress-bar"></div>
         </div>
